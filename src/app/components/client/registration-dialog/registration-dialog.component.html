@@ -1,0 +1,36 @@
+<h1 mat-dialog-title>Cadastrar cliente</h1>
+<div mat-dialog-content>
+    <form>
+        <mat-form-field appearance="fill">
+            <mat-label>Nome completo</mat-label>
+            <input matInput [(ngModel)]="client.fullname" name="fullname" [formControl]="nameFormControl">
+            <mat-error *ngIf="nameFormControl.hasError('required')">
+                O nome completo é <strong>obrigatório</strong>
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>CPF</mat-label>
+            <input matInput [(ngModel)]="client.cpf" name="cpf" placeholder="000.000.000-00" [formControl]="cpfFormControl">
+            <mat-error *ngIf="cpfFormControl.hasError('required')">
+                O CPF é <strong>obrigatório</strong>
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Cidade</mat-label>
+            <input matInput [(ngModel)]="client.city" name="city" [formControl]="cityFormControl">
+            <mat-error *ngIf="cityFormControl.hasError('required')">
+                A cidade é <strong>obrigatório</strong>
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>UF</mat-label>
+            <mat-select [(ngModel)]="client.uf" name="uf">
+              <mat-option *ngFor="let uf of ufs" [value]="uf">{{ uf }}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button (click)="cancel(false)">Cancelar</button>
+  <button mat-raised-button (click)="createClient()" color="primary" cdkFocusInitial>Salvar</button>
+</div>

@@ -1,0 +1,14 @@
+.header {
+    display: flex;
+    justify-content: flex-end;
+}
+
+table {
+    width: 100%;
+    margin-top: 15px;
+}
+
+i.delete {
+    color: #e35e6b;
+    margin-left: 10px;
+}

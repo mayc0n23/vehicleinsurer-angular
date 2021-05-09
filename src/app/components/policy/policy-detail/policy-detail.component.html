@@ -1,0 +1,11 @@
+<h1 mat-dialog-title>Detalhes da apólice</h1>
+<div mat-dialog-content>
+    <mat-label>Status: {{ data.status }}</mat-label>
+    <mat-label>Dias vencidos: {{ data.daysOverdue }}</mat-label>
+    <mat-label>Dias até o vencimento: {{ data.daysToExpire }}</mat-label>
+    <mat-label>Placa do veículo: {{ data.vehicleLicensePlate}}</mat-label>
+    <mat-label>Valor da apólice: {{ data.policyValue | currency: 'BRL' }}</mat-label>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button (click)="cancel(false)">Fechar</button>
+</div>

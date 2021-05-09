@@ -1,0 +1,8 @@
+<h1 mat-dialog-title>Excluir cliente</h1>
+<div mat-dialog-content>
+    <span>Tem certeza que deseja fazer isso?</span>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button (click)="cancel(false)">Não</button>
+  <button mat-raised-button (click)="deleteClient()" color="primary" cdkFocusInitial>Sim</button>
+</div>

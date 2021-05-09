@@ -1,0 +1,12 @@
+.header {
+    display: flex;
+    align-items: center;
+}
+
+.header .title-group i {
+    padding-right: 5px;
+}
+
+a {
+    color: #6A1B9A;
+}

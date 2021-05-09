@@ -1,0 +1,35 @@
+<h1 mat-dialog-title>Cadastrar apólice</h1>
+<div mat-dialog-content>
+    <form>
+        <mat-form-field appearance="fill">
+            <mat-label>Inicio de vigência</mat-label>
+            <input matInput [(ngModel)]="policy.startOfTerm" name="startOfTerm" [matDatepicker]="startPicker">
+            <mat-datepicker-toggle matSuffix [for]="startPicker"></mat-datepicker-toggle>
+            <mat-datepicker #startPicker></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Fim de vigência</mat-label>
+            <input matInput [(ngModel)]="policy.endOfTerm" name="endOfTerm" [matDatepicker]="endPicker">
+            <mat-datepicker-toggle matSuffix [for]="endPicker"></mat-datepicker-toggle>
+            <mat-datepicker #endPicker></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Placa do veículo</mat-label>
+            <input matInput [(ngModel)]="policy.vehicleLicensePlate" name="vehicleLicensePlate" [formControl]="vehicleLicensePlateFormControl">
+            <mat-error *ngIf="vehicleLicensePlateFormControl.hasError('required')">
+                A placa do veículo é <strong>obrigatória</strong>
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Valor da apólice</mat-label>
+            <input type="number" matInput [(ngModel)]="policy.policyValue" name="policyValue" [formControl]="policyValueFormControl"  placeholder="Ex: 1500">
+            <mat-error *ngIf="policyValueFormControl.hasError('required')">
+                O valor da apólice é <strong>obrigatório</strong>
+            </mat-error>
+        </mat-form-field>
+    </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button (click)="cancel(false)">Cancelar</button>
+  <button mat-raised-button (click)="createPolicy()" color="primary" cdkFocusInitial>Salvar</button>
+</div>

@@ -1,0 +1,14 @@
+.mat-dialog-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.mat-dialog-title {
+    text-align: center;
+    color: blueviolet;
+}
+
+.mat-form-field {
+    display: flex;
+    flex-direction: column;
+}
